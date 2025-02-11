@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { formatDate } from "../../../shared/lib/formatDate";
+import { formatDate } from "../../../shared/lib/formatDate/formatDate";
 import { ICharacterResult } from "../../../shared/types";
 import styles from "./CharacterItemStyles.module.css";
 

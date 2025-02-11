@@ -5,16 +5,20 @@ import styles from "./CharacterStyles.module.css";
 import { Button } from "../../../shared/button/ui/Button";
 import { ErrorComponent } from "../../../shared/errorComponent/ui/errorComponent";
 import { Loader } from "../../../shared/loader/ui/Loader";
+import { getNumber } from "../../../shared/lib/getNumberFromUrl/getNumber";
 
 export const OneCharacterItem = () => {
   const location = useLocation();
+
   const navigate = useNavigate();
   const [getOneCharacter, { data, isLoading, isError }] =
     useLazyGetOneCharacterQuery();
-
-  useEffect(() => {
-    getOneCharacter(location.state.id);
-  }, [getOneCharacter, isLoading, location.state.id]);
+  
+    useEffect(() => {
+    getOneCharacter(
+      (location.state && location.state.id) || getNumber(location.pathname)
+    );
+  }, [getOneCharacter, isLoading, location.pathname, location.state]);
 
   return (
     <div className={styles.container}>
