@@ -1,0 +1,32 @@
+.input {
+  width: 624px;
+  height: 64px;
+  border: none;
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 5px 5px 10px rgba(100, 100, 111, 0.2);
+  padding-left: 25px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  color: #656ec2;
+  border: 1px solid transparent;
+}
+.input::placeholder {
+  color: #656ec2;
+}
+
+.input:focus {
+  outline: none;
+}
+@media (max-width: 700px) {
+  .input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .input {
+    height: 20px;
+    width: 80%;
+  }
+}

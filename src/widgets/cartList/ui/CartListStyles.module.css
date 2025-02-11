@@ -1,0 +1,7 @@
+.productList {
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}

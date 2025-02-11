@@ -1,0 +1,9 @@
+.input {
+  display: flex;
+  justify-content: center;
+  margin-top: 128px;
+  margin-bottom: 100px;
+}
+.errorComponent {
+  text-align: center;
+}

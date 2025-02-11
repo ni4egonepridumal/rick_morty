@@ -1,0 +1,61 @@
+.characterCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 5px 5px 10px rgba(100, 100, 111, 0.2);
+  cursor: pointer;
+}
+
+.characterCard:nth-child(1),
+.characterCard:nth-child(2) {
+  grid-column: span 3;
+  height: 262px;
+}
+
+.characterCard:nth-child(n + 3) {
+  grid-column: span 2;
+  height: 150px;
+}
+
+.footerCharacterCard {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.footerCharacterCardText {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerCharacterCardText p {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.footerCharacterCardText span {
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .characterCard:nth-child(n + 3) {
+    grid-column: span 3;
+    height: 262px;
+  }
+}
+
+@media (max-width: 650px) {
+  .characterCard:nth-child(n + 3),
+  .characterCard:nth-child(1),
+  .characterCard:nth-child(2) {
+    grid-column: span 6;
+    height: 262px;
+  }
+}

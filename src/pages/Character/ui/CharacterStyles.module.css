@@ -1,0 +1,24 @@
+.container {
+  padding: 15px;
+}
+.oneCharacterInner {
+  padding: 15px;
+  border: 4px solid #656ec2;
+  border-radius: 12px;
+  max-width: 320px;
+  margin: 10% auto;
+}
+.imgInner {
+  margin: 0 auto;
+  max-width: 300px;
+}
+.imgItem {
+  max-width: 100%;
+  height: auto;
+}
+.heading {
+  text-align: center;
+}
+.button {
+  margin-top: 15px;
+}
