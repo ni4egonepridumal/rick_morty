@@ -30,7 +30,7 @@ export const getOneCharacterApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
     getOneCharacter: builder.query<ICharacter, string>({
-      query: (id) => `/characte/${id}`,
+      query: (id) => `/character/${id}`,
     }),
   }),
 });
