@@ -4,6 +4,7 @@
   margin-top: 128px;
   margin-bottom: 100px;
 }
-.errorComponent {
+.errorComponent,
+.loader {
   text-align: center;
 }

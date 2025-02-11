@@ -4,6 +4,7 @@ import { useLazyGetCharactersQuery } from "../model/api";
 import { InputWithCount } from "../../../features/inputResult/ui/InputResult";
 import { CharactersList } from "../../../widgets/cartList/ui/CartList";
 import { ErrorComponent } from "../../../shared/errorComponent/ui/errorComponent";
+import { Loader } from "../../../shared/loader/ui/Loader";
 
 export const Home = () => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -26,19 +27,21 @@ export const Home = () => {
         />
       </div>
       {isLoading ? (
-        <div>Получаю Данные...</div>
+        <Loader className={styles.loader}>Получаю Данные...</Loader>
       ) : (
         <>
           {isError ? (
             <ErrorComponent
-              errorMessage="Не удалось получить персонажей"
+              errorMessage="Не удалось получить персонажей, введите другое имя"
               className={styles.errorComponent}
             />
           ) : (
             <>
               {data?.results.length && (
                 <CharactersList
-                  characters={inputValue.length > 2 && isSuccess ? data.results : []}
+                  characters={
+                    inputValue.length > 2 && isSuccess ? data.results : []
+                  }
                 />
               )}
             </>

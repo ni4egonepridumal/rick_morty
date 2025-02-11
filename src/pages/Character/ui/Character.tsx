@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import styles from "./CharacterStyles.module.css";
 import { Button } from "../../../shared/button/ui/Button";
 import { ErrorComponent } from "../../../shared/errorComponent/ui/errorComponent";
+import { Loader } from "../../../shared/loader/ui/Loader";
 
 export const OneCharacterItem = () => {
   const location = useLocation();
@@ -18,11 +19,14 @@ export const OneCharacterItem = () => {
   return (
     <div className={styles.container}>
       {isError ? (
-        <ErrorComponent errorMessage="Не удалось получить персонажа" />
+        <ErrorComponent
+          errorMessage="Не удалось получить персонажа"
+          className={styles.errorComponent}
+        />
       ) : (
         <div className={styles.oneCharacterInner}>
           {isLoading ? (
-            <>Загрузка</>
+            <Loader className={styles.loader}>Получаю Данные...</Loader>
           ) : (
             <div>
               <h2 className={styles.heading}>ДОСЬЕ</h2>

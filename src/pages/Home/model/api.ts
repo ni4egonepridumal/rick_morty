@@ -15,11 +15,9 @@ interface ICharacter {
 export const getCharactersApi = createApi({
   reducerPath: "getCharacters",
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
-  // todo tagTypes: ["AddComment"],
   endpoints: (builder) => ({
     getCharacters: builder.query<ICharacter, string>({
       query: (value) => `/character/?name=${value}`,
-      // todo providesTags: (result, error, id) => [{ type: "AddComment", id }],
     }),
   }),
 });
